@@ -1,0 +1,21 @@
+import random
+def play_number_guessing_game():
+  secret_num=random.randint(1,100)
+  guesses_left=7
+  print("welcome to number guessing game!!")
+  print("i am guessing a number between 1 and 100")
+
+  while guesses_left >0:
+    guess = int(input(f"you have {guesses_left} guesses left.what is your guess "))
+    if guess < secret_num:
+      print("too low! try again..")
+    elif guess > secret_num:
+      print("too high ! try agian")
+    else:
+      print("congragulations!! you guessed it!")
+      return 
+    
+    guesses_left-=1
+  print(f"sorry, you've run out of guesees. the number was {secret_num}.")
+
+play_number_guessing_game()
